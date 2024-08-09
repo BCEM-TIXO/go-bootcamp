@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+		<html lang="en">
+		<head>
+				<meta charset="UTF-8">
+				<meta name="viewport" content="width=device-width, initial-scale=1.0">
+				<title>{{.Title}}</title>
+		</head>
+		<body>
+            <img src="/img" alt="Описание изображения" class="img">
+            <ul>
+                {{range .ArticlesTitles}}
+                <li class="page-item"><a class="page-link" href="/article?title={{.Title}}">{{.Title}}</a></li>
+                {{end}}
+            </ul>
+            <ul class="pagination">
+                
+                {{if .Paging.HasPrev}}
+                <li class="page-item"><a class="page-link" href="/main">First</a></li>
+                {{end}}
+                
+                {{if .Paging.HasPrev}}
+                <li class="page-item"><a class="page-link" href="/main?page={{.Paging.PrevPage}}">Previous</a></li>
+                {{end}}
+            
+                {{if .Paging.HasNext}}
+                <li class="page-item"><a class="page-link" href="/main?page={{.Paging.NextPage}}">Next</a></li>
+                {{end}}
+            </body>
+            <li class="page-item"><a class="page-link" href="/admin">Admin Panel</a></li>
+		</html>
+

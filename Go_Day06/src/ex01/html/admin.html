@@ -1,0 +1,99 @@
+<h1 id="day-06-go-boot-camp">Day 06 - Go Boot camp</h1>
+
+<h2 id="fortress-of-solitude">Fortress of Solitude</h2>
+
+<h2 id="contents">Contents</h2>
+
+<ol>
+<li><a href="#chapter-i">Chapter I</a> <br>
+1.1. <a href="#general-rules">General rules</a></li>
+<li><a href="#chapter-ii">Chapter II</a> <br>
+2.1. <a href="#rules-of-the-day">Rules of the day</a></li>
+<li><a href="#chapter-iii">Chapter III</a> <br>
+3.1. <a href="#intro">Intro</a></li>
+<li><a href="#chapter-iv">Chapter IV</a> <br>
+4.1. <a href="#exercise-00-amazing-logo">Exercise 00: Amazing Logo</a></li>
+<li><a href="#chapter-v">Chapter V</a> <br>
+5.1. <a href="#exercise-01-place-for-your-thoughts">Exercise 01: Place for Your Thoughts</a></li>
+<li><a href="#chapter-vi">Chapter VI</a> <br>
+6.1. <a href="#exercise-02-haters-gonna-hate">Exercise 02: Haters Gonna Hate</a></li>
+</ol>
+
+<h2 id="chapter-i" >Chapter I</h2>
+<h2 id="general-rules" >General rules</h2>
+
+<ul>
+<li>Your programs should not quit unexpectedly (giving an error on a valid input). If this happens, your project will be considered non functional and will receive a 0 during the evaluation.</li>
+<li>We encourage you to create test programs for your project even though this work won&rsquo;t have to be submitted and won&rsquo;t be graded. It will give you a chance to easily test your work and your peers&rsquo; work. You will find those tests especially useful during your defence. Indeed, during defence, you are free to use your tests and/or the tests of the peer you are evaluating.</li>
+<li>Submit your work to your assigned git repository. Only the work in the git repository will be graded.</li>
+<li>If your code is using external dependencies, it should use <a href="https://go.dev/blog/using-go-modules" target="_blank">Go Modules</a> for managing them</li>
+</ul>
+
+<h2 id="chapter-ii" >Chapter II</h2>
+<h2 id="rules-of-the-day" >Rules of the day</h2>
+
+<ul>
+<li>You should only turn in <code>*.go</code> files and (in case of external dependencies) <code>go.mod</code> + <code>go.sum</code></li>
+<li>Your code for this task should be buildable with just <code>go build</code></li>
+<li>Additional steps, e.g. for creating tables in a database, should be included in <em>admin_credentials.txt</em></li>
+</ul>
+
+<h2 id="chapter-iii" >Chapter III</h2>
+<h2 id="intro" >Intro</h2>
+
+<p>So - this is it! You&rsquo;ve just got superpowers! And, as a new superhero, you definitely need to think about your street cred and overall recognition, don&rsquo;t you think?</p>
+
+<p>Fireballs - check!
+Almost indecently tight leotard - check!
+Secret base - oh yeah, baby!</p>
+
+<p>Anything else you forgot? Any other shenanigans to perform? OH WAIT~</p>
+
+<p><h2 id="chapter-iv" >Chapter IV</h2>
+<h3 id="ex00">Exercise 00: Amazing Logo</h3></p>
+
+<p>The only requirement here is to generate an awesome logo! It should be a 300x300px PNG file named &lsquo;amazing_logo.png&rsquo;. Make it as cool as you can!</p>
+
+<p>Image should appear in the same directory as the launched binary executable after compiling.</p>
+
+<p>NOTE: you shouldn&rsquo;t cheat and download anything from the internet in your code. Just don&rsquo;t rely on any external sources and unleash your fantasy in programming! Also, just plain single color or transparent logo doesn&rsquo;t count!</p>
+
+<p><h2 id="chapter-v" >Chapter V</h2>
+<h3 id="ex01">Exercise 01: Place for Your Thoughts</h3></p>
+
+<p>Okay, so what else do you need now? A website, of course! It should be a blog where everybody will be able to read your ideas on the world improvement. Here is a list of features it should have:</p>
+
+<ul>
+<li><p>Database (you should use PostgreSQL)</p></li>
+
+<li><p>Admin panel (on &lsquo;/admin&rsquo; endpoint) where only you can login with just a form for posting new articles (let&rsquo;s forget about editing old ones for now, superheroes don&rsquo;t ever look back)</p></li>
+
+<li><p>Basic markdown support (so it can at least show &ldquo;###&rdquo; headers and links in generated HTML)</p></li>
+
+<li><p>Pagination (show no more than 3 thoughts on one page for people to not get too much of your awesomeness)</p></li>
+
+<li><p>Application UI should use port 8888</p></li>
+</ul>
+
+<p>All additional files (images, css, js if you decide to use any of those) should be submitted as a <em>zip</em> file to be unpacked in the same directory as binary itself, resulting into something like this:
+.</p>
+
+<pre><code>├── css
+│   └── main.css
+├── images
+│   └── my_cat.png
+├── js
+│   └── scripts.js
+└── myblog-binary
+</code></pre>
+
+<p>Admin credentials for posting access (login and password) and database credentials (database name and user) should be submitted separately as well in a file called <em>admin_credentials.txt</em>. If there are additional commands to be run to create tables in a database, put them into the same file.</p>
+
+<p>Main page should include your logo from EX00, links to articles and (optionally) some short preview of their content, as well as pagination (if there are more than 3 articles in a database).</p>
+
+<p>When clicking a link to article, user should get to a page with a rendered markdown text and a single &ldquo;Back&rdquo; link which brings him/her back to main page.</p>
+
+<p><h2 id="chapter-vi" >Chapter VI</h2>
+<h3 id="ex02">Exercise 02: Haters Gonna Hate</h3></p>
+
+<p>Now, when you already have a cool website, let&rsquo;s update it a little and protect ourselves from the villains trying to bring it down! All you need to do is implement rate limiting, so if ther are more than a hundred clients per second trying to access it, they should get a &ldquo;429 Too Many Requests&rdquo; response. Of course when you&rsquo;re getting more famous we&rsquo;ll raise that limit! It&rsquo;s just for testing for now.</p>
